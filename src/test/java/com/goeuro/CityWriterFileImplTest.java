@@ -60,13 +60,13 @@ public class CityWriterFileImplTest {
                 readFile(outFile, UTF_8));
     }
 
-    @Test(expected = GoEuroException.class)
+    @Test(expected = ProcessException.class)
     public void writeEmptyTest() throws IOException {
         CityWriter cityDao = new CityWriterFileImpl(OUT_FILE, cityFormatter);
         cityDao.write(new City[0]);
     }
 
-    @Test(expected = GoEuroException.class)
+    @Test(expected = ProcessException.class)
     public void writeNullTest() throws IOException {
         CityWriter cityDao = new CityWriterFileImpl(OUT_FILE, cityFormatter);
         cityDao.write(null);

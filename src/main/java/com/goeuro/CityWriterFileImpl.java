@@ -3,13 +3,11 @@ package com.goeuro;
 import com.goeuro.api.CityFormatter;
 import com.goeuro.api.CityWriter;
 import com.goeuro.dto.City;
-import com.goeuro.util.ArgsUtil;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +27,7 @@ public class CityWriterFileImpl implements CityWriter {
     @Override
     public File write(City[] cities) throws IOException {
         if (cities == null || cities.length == 0) {
-            throw new GoEuroException("Nothing to write");
+            throw new ProcessException("Nothing to write");
         }
 
         List<String> names = Arrays.stream(cities)

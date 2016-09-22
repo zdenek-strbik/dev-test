@@ -42,7 +42,7 @@ public class Main {
             File outputFile = cityWriter.write(cities);
 
             System.out.println("Result csv file path: " + outputFile.getAbsolutePath());
-        } catch (GoEuroException | ArgsUtil.ArgsUtilException e) {
+        } catch (ProcessException | ArgsUtil.ArgsUtilException e) {
             System.err.println(e.getMessage());
         }
     }
